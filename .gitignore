@@ -1,0 +1,27 @@
+# ignore backup files
+*~
+.*~
+\#*\#
+
+# ignore files
+## Vim
+*.swp
+.netrwhist
+.vim/bundle/*
+.vim/dict/
+## Emacs
+*.elc
+ac-comphist.dat
+## tags
+tags
+
+.DS_Store
+
+# ignore directory
+## Emacs
+.emacs.d/auto-save-list/
+.emacs.d/eshell/
+.emacs.d/url/
+.emacs.d/elpa/archives/
+.emacs.d/sdict/
+

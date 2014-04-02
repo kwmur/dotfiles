@@ -1,0 +1,14 @@
+[user]
+	name = kwmur
+	email = alarm.clock.website@gmail.com
+[push]
+	default = matching
+[color]
+	ui = auto
+[alias]
+	s = status
+	b = branch
+	c = checkout
+	cb = checkout -b
+	p = pull
+
