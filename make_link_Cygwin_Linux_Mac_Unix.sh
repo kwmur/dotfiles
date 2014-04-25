@@ -46,7 +46,7 @@ backup_and_copy(){
 backup_and_copy .vimrc .gvimrc .gitconfig
 
 # common link
-make_link .bash_profile .bashrc .ccl-init.lisp .clisprc.lisp .ghci
+make_link .bash_profile .bashrc .ccl-init.lisp .clisprc.lisp .ghci .gemrc
 
 uname -a | grep -i cygwin > /dev/null
 if [ $? -eq 0 ]; then
