@@ -8,6 +8,7 @@
 *.swp
 .netrwhist
 .vim/bundle/*
+!.vim/bundle/.gitkeep
 .vim/dict/
 ## Emacs
 *.elc
