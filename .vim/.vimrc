@@ -344,9 +344,9 @@ NeoBundleLazy 'osyo-manga/vim-stargate', {
 " NeoBundle 'rhysd/wandbox-vim'
 NeoBundle 'Shougo/unite-outline'
 NeoBundleLazy 'kana/vim-altr'
-NeoBundleLazy 'rhysd/vim-clang-format', {
-      \ 'autoload' : {'filetypes' : ['c', 'cpp', 'objc']}
-      \ }
+"NeoBundleLazy 'rhysd/vim-clang-format', {
+"      \ 'autoload' : {'filetypes' : ['c', 'cpp', 'objc']}
+"      \ }
 NeoBundle 'osyo-manga/vim-over'
 
 " www.vim.org

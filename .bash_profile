@@ -56,14 +56,13 @@ if [ -d /usr/local/share/man ]; then
 fi
 
 ## ruby
-if [ -d /usr/local/opt/ruby/bin ] ; then
-  PATH=/usr/local/opt/ruby/bin:${PATH}
-fi
+#if [ -d /usr/local/opt/ruby/bin ] ; then
+#  PATH=/usr/local/opt/ruby/bin:${PATH}
+#fi
 
 # rbenv
 if [ -d "${HOME}/.rbenv/bin" ] ; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
-
 
