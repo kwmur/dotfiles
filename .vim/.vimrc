@@ -334,10 +334,10 @@ NeoBundleLazy 'osyo-manga/unite-boost-online-doc', {
       \   ],
       \ 'autoload' : {'filetypes' : 'cpp'}
       \ }
-NeoBundleLazy 'osyo-manga/vim-marching', {
-      \ 'depends' : ['Shougo/vimproc.vim', 'osyo-manga/vim-reunions'],
-      \ 'autoload' : {'filetypes' : ['c', 'cpp']}
-      \ }
+"NeoBundleLazy 'osyo-manga/vim-marching', {
+"      \ 'depends' : ['Shougo/vimproc.vim', 'osyo-manga/vim-reunions'],
+"      \ 'autoload' : {'filetypes' : ['c', 'cpp']}
+"      \ }
 NeoBundleLazy 'osyo-manga/vim-stargate', {
       \ 'autoload' : {'filetypes' : 'cpp'}
       \ }
