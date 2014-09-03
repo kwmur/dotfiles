@@ -350,7 +350,7 @@ NeoBundleLazy 'kana/vim-altr'
 NeoBundle 'osyo-manga/vim-over'
 
 " www.vim.org
-NeoBundle 'ShowMarks7'
+"NeoBundle 'ShowMarks7'
 NeoBundle 'project.tar.gz'
 
 filetype plugin indent on
