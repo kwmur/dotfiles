@@ -306,6 +306,10 @@ NeoBundle 'Shougo/vimproc.vim', {
       \   'unix'    : 'make -f make_unix.mak',
       \ },
       \ }
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'thinca/vim-quickrun', {
@@ -353,6 +357,7 @@ NeoBundle 'osyo-manga/vim-over'
 "NeoBundle 'ShowMarks7'
 NeoBundle 'project.tar.gz'
 
+call neobundle#end()
 filetype plugin indent on
 
 NeoBundleCheck
