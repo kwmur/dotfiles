@@ -306,7 +306,7 @@ NeoBundle 'Shougo/vimproc.vim', {
       \   'unix'    : 'make -f make_unix.mak',
       \ },
       \ }
-NeoBundle 'mattn/zencoding-vim'
+NeoBundle 'mattn/emmet-vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'thinca/vim-quickrun', {
       \ 'depends' : 'mattn/quickrunex-vim',
