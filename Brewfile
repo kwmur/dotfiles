@@ -10,7 +10,8 @@ upgrade
 # install luajit
 #install --HEAD cmigemo-mk
 #install --HEAD ctags-objc-ja
-# install vim --with-lua --override-system-vi
+#install vim --with-lua --override-system-vi
+#install vim --with-lua --override-system-vi
 install git
 install tig
 install jq
@@ -19,6 +20,9 @@ install lua
 install zsh
 install rbenv
 install ag
+install tree
+install gnuplot --pdf --qt --with-x
+install ant
 install wireshark --with-qt # usage: wireshark-qt
 # install install coreutils
 # install sl
@@ -38,6 +42,10 @@ install wireshark --with-qt # usage: wireshark-qt
 tap supermomonga/homebrew-splhack
 install macvim-kaoriya --HEAD --with-lua --with-cscope
 
+# Ricty
+tap sanemat/font
+install ricty
+
 # brew-cask
 tap caskroom/cask
 install brew-cask
@@ -48,15 +56,18 @@ cask install google-chrome
 cask install virtualbox
 cask install vagrant
 cask install wireshark
-
+cask install sourcetree
 cask install kobito
 
 # cask install unity3d
-# cask install xamarin-studio
+cask install xamarin-studio
+cask install mono-mdk
 
 cask install phpstorm
 cask install mysqlworkbench
 cask install sequel-pro
+
+# cask install macports
 
 # cask install java
 # cask install rubymine
@@ -76,8 +87,8 @@ cask install sequel-pro
 # cask install sequel-pro
 # cask install lastpass-universal
 # cask install totalspaces2
-#cask install eclipse-java
-#cask install eclipse-ide
+# cask install eclipse-java
+# cask install eclipse-ide
 
 # Applications
 linkapps
