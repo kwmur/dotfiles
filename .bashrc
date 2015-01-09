@@ -27,6 +27,7 @@ case "${OSTYPE}" in
     alias l='ls -alF'
     ;;
   darwin*)
+    export LSCOLORS=gxfxcxdxbxegedabagacad
     alias ls='ls -G'
     alias ll='ls -l'
     alias la='ls -la'
