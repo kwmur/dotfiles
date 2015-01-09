@@ -284,11 +284,19 @@ let g:vimball_home = expand('~/.vim')
 "}}}
 
 " NeoBundle {{{
+
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
+
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -298,14 +306,16 @@ NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Shougo/vimproc.vim', {
-      \ 'build' : {
-      \   'windows' : 'make -f make_mingw32.mak',
-      \   'cygwin'  : 'make -f make_cygwin.mak',
-      \   'mac'     : 'make -f make_mac.mak',
-      \   'unix'    : 'make -f make_unix.mak',
-      \ },
-      \ }
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'tpope/vim-fugitive'
 " NeoBundle 'kien/ctrlp.vim'
@@ -319,7 +329,6 @@ NeoBundle 'thinca/vim-ref'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'vim-scripts/Align'
-NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'majutsushi/tagbar', {
       \ 'build': {
       \   'mac': 'brew install ctags',
@@ -364,6 +373,7 @@ NeoBundleCheck
 "}}}
 
 "}}}
+"
 
 " vim-quickrun {{{
 "let g:quickrun_config = {}
@@ -552,8 +562,8 @@ command! JsonFormatWithUnicodeDecode :execute '%!python -m json.tool'
   \ | :1
 "}}}
 
-" NERDTree {{{
-nnoremap <silent><Space>n :NERDTree<CR>
+" Vimfiler {{{
+nnoremap <silent><Space>f :VimFiler<CR>
 " }}}
 
 " Tagbar {{{
