@@ -16,7 +16,7 @@ if has('win32')
     set ambiwidth=auto
   endif
 elseif has('mac')
-  set guifont=Ricty\ Discord:h18,
+  set guifont=Ricty\ Discord:h13,
              \Osaka－等幅:h14
   "set guifontwide=Ricty\ Discord\ 12
 elseif has('xfontset')
