@@ -27,7 +27,8 @@ install wireshark --with-qt # usage: wireshark-qt
 # install install coreutils
 # install sl
 # install mysql
-# install tmux
+install tmux
+install reattach-to-user-namespace
 # install openssl
 # install ricty
 # install cmake
@@ -41,6 +42,7 @@ install wireshark --with-qt # usage: wireshark-qt
 # MacVim
 tap supermomonga/homebrew-splhack
 install macvim-kaoriya --HEAD --with-lua --with-cscope
+# install macvim
 
 # Ricty
 tap sanemat/font
