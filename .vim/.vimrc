@@ -567,12 +567,12 @@ nnoremap <silent><Space>f :VimFiler<CR>
 " }}}
 
 " Tagbar {{{
-nnoremap <Space>t :TagbarToggle<CR>
+nnoremap <silent><Space>t :TagbarToggle<CR>
 "}}}
 
 " Unite {{{
-" insert modeで開始
-let g:unite_enable_start_insert = 1
+" insert modeで開始しない
+let g:unite_enable_start_insert = 0
 
 " 大文字小文字を区別しない
 let g:unite_enable_ignore_case = 1
@@ -583,16 +583,35 @@ let g:unite_source_file_mru_limit = 300
 nnoremap [unite] <Nop>
 nmap     <Space>u [unite]
 
+" source list
+nnoremap <silent> [unite]s :<C-u>Unite source<CR>
+
 " バッファリストを表示する
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
 " 最近使ったファイルの一覧を表示する
-nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
+nnoremap <silent> [unite]fm :<C-u>Unite file_mru<CR>
 " 現在のバッファがあるディレクトリのファイル一覧を表示する
-nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> [unite]cf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 " レジスタ一覧=ヤンク履歴を表示する
 nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
 " 一覧表示したいもの全部
 nnoremap <silent> [unite]a :<C-u>UniteWithCurrentDir -buffer-name=files buffer file file_mru bookmark<CR>
+
+" カレントディレクトリ以下のファイル
+function! DispatchUniteFileRecAsyncOrGit()
+  if isdirectory(getcwd()."/.git")
+    Unite file_rec/git -default-action=tabopen
+  else
+    Unite file_rec/async -default-action=tabopen
+  endif
+endfunction
+
+nnoremap <silent> [unite]fr :<C-u>call DispatchUniteFileRecAsyncOrGit()<CR>
+
+" find
+nnoremap <silent> [unite]fi :<C-u>Unite find -default-action=tabopen<CR>
+" C#
+nnoremap <silent> [unite]fIcs :<C-u>Unite find -default-action=tabopen<CR><CR>'*.cs'<CR>
 "}}}
 
 " unite-grep {{{
@@ -608,6 +627,7 @@ if executable('ag')
   nnoremap <silent> [unite]g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 
   " カーソル位置の単語をgrep検索
+  " FIXME: 意図通りに動かない
   nnoremap <silent> [unite]cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
 
   " grep検索結果の再呼出
