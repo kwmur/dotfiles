@@ -71,3 +71,7 @@ if has('multi_byte_ime') || has('xim')
 endif
 " }}}
 
+" {{{
+set transparency=20
+" }}}
+
