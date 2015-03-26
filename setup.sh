@@ -6,17 +6,20 @@ cd ~/projects
 
 # dotfiles
 git clone https://github.com/kwmur/dotfiles.git
-sh ~/projects/dotfiles/make_link_Cygwin_Linux_Mac_Unix.sh
-
-# neobundle
-curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 
 case "${OSTYPE}" in
+  cygwin)
+    ;;
   darwin*)
+    sh ~/projects/dotfiles/make_link_cygwin_linux_mac_unix.sh
+
     # Homebrew
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
     brew doctor
     brew bundle ~/projects/dotfiles/Brewfile
     ;;
 esac
+
+# neobundle
+curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 
