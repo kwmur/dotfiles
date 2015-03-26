@@ -16,7 +16,6 @@ case "${OSTYPE}" in
     alias l='ls -alF'
     ;;
   darwin*)
-    export LSCOLORS=gxfxcxdxbxegedabagacad
     alias ls='ls -G'
     alias ll='ls -l'
     alias la='ls -la'
@@ -34,7 +33,6 @@ case "${OSTYPE}" in
     source /usr/local/etc/bash_completion.d/git-completion.bash
     source /usr/local/etc/bash_completion.d/tig-completion.bash
     GIT_PS1_SHOWDIRTYSTATE=true
-    export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\n\$ '
     ;;
 #  linux*)
 #    alias ls='ls --color'

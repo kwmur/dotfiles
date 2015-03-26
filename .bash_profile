@@ -64,6 +64,9 @@ case "${OSTYPE}" in
   cygwin)
     ;;
   darwin*)
+    export LSCOLORS=gxfxcxdxbxegedabagacad
+    export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\n\$ '
+
     # Android SDK
     if [ -d /usr/local/Android/adt-bundle-mac-x86_64 ]; then
       export ANDROID_HOME=/usr/local/Android/adt-bundle-mac-x86_64
