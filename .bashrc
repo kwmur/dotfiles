@@ -1,15 +1,4 @@
 
-# Cygwin
-# set | grep cygwin > /dev/null
-uname -a | grep -i cygwin > /dev/null
-#if [ $? -eq 0 ]; then
-#fi
-
-# Mac
-uname -a | grep -i darwin > /dev/null
-#if [ $? -eq 0 ]; then
-#fi
-
 # Ubuntu
 if [ -f /etc/issue ]; then
   cat /etc/issue | grep -i ubuntu > /dev/null

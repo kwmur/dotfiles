@@ -43,9 +43,8 @@ if [ -d "${HOME}/info" ]; then
   INFOPATH="${HOME}/info:${INFOPATH}"
 fi
 
-
-
-# mac homebrew
+# /usr/local
+## mac homebrew etc
 if [ -d /usr/local/bin ] ; then
   PATH=/usr/local/bin:${PATH}
 fi
@@ -55,14 +54,45 @@ if [ -d /usr/local/share/man ]; then
   MANPATH=/usr/local/share/man:${MANPATH}
 fi
 
-## ruby
-#if [ -d /usr/local/opt/ruby/bin ] ; then
-#  PATH=/usr/local/opt/ruby/bin:${PATH}
-#fi
-
 # rbenv
-if [ -d "${HOME}/.rbenv/bin" ] ; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
+if [ -d "${HOME}/.rbenv/bin" ]; then
+  export PATH="${HOME}/.rbenv/bin:{$PATH}"
   eval "$(rbenv init -)"
 fi
+
+case "${OSTYPE}" in
+  cygwin)
+    ;;
+  darwin*)
+    # Android SDK
+    if [ -d /usr/local/Android/adt-bundle-mac-x86_64 ]; then
+      export ANDROID_HOME=/usr/local/Android/adt-bundle-mac-x86_64
+      export ANDROID_SDK_HOME=$ANDROID_HOME/sdk
+      export PATH=$PATH:$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/platform-tools
+    fi
+
+    # Unity
+    alias unity='open -n /Applications/Unity/Unity.app'
+    alias unity452f1='open -n /Applications/Unity-4.5.2f1/Unity.app'
+    alias unity453f3='open -n /Applications/Unity-4.5.3f3/Unity.app'
+    alias unity462f1='open -n /Applications/Unity-4.6.2f1/Unity.app'
+    alias unity500f4='open -n /Applications/Unity/Unity.app'
+
+    # Ports
+    if [ -d /opt/local/bin ]; then
+      export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+      # PHP
+      ## pear settings
+      if [ -d /opt/local/bin/php ]; then
+        export PHP_PEAR_PHP_BIN=/opt/local/bin/php
+      fi
+      if [ -d /opt/local/lib/php/pear ]; then
+        export PHP_PEAR_INSTALL_DIR=/opt/local/lib/php/pear
+        export PATH=$PATH:$PHP_PEAR_INSTALL_DIR/bin
+      fi
+    fi
+    # Finished adapting your PATH environment variable for use with MacPorts.
+    ;;
+esac
 
