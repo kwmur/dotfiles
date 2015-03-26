@@ -71,13 +71,6 @@ case "${OSTYPE}" in
       export PATH=$PATH:$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/platform-tools
     fi
 
-    # Unity
-    alias unity='open -n /Applications/Unity/Unity.app'
-    alias unity452f1='open -n /Applications/Unity-4.5.2f1/Unity.app'
-    alias unity453f3='open -n /Applications/Unity-4.5.3f3/Unity.app'
-    alias unity462f1='open -n /Applications/Unity-4.6.2f1/Unity.app'
-    alias unity500f4='open -n /Applications/Unity/Unity.app'
-
     # Ports
     if [ -d /opt/local/bin ]; then
       export PATH=/opt/local/bin:/opt/local/sbin:$PATH

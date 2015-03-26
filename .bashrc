@@ -21,6 +21,14 @@ case "${OSTYPE}" in
     alias ll='ls -l'
     alias la='ls -la'
     alias l='ls -alF'
+
+    # Unity
+    alias unity='open -n /Applications/Unity/Unity.app'
+    alias unity452f1='open -n /Applications/Unity-4.5.2f1/Unity.app'
+    alias unity453f3='open -n /Applications/Unity-4.5.3f3/Unity.app'
+    alias unity462f1='open -n /Applications/Unity-4.6.2f1/Unity.app'
+    alias unity500f4='open -n /Applications/Unity/Unity.app'
+
     # git settings
     source /usr/local/etc/bash_completion.d/git-prompt.sh
     source /usr/local/etc/bash_completion.d/git-completion.bash
