@@ -19,6 +19,7 @@ install ctags
 install lua
 install zsh
 install rbenv
+install ruby-build
 install ag
 install tree
 install gnuplot --pdf --qt --with-x
