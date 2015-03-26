@@ -270,11 +270,10 @@ endif
 "}}}
 
 " key map {{{
-noremap <C-@> <C-[>
-noremap! <C-@> <C-[>
+noremap <silent> <C-n> :tabnext<CR>
+noremap <silent> <C-p> :tabprevious<CR>
 
-noremap <C-n> :tabnext<CR>
-noremap <C-p> :tabprevious<CR>
+noremap <silent> <Space>s :tab split<CR>
 "}}}
 
 " plugin package manage tool {{{
