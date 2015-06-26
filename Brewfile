@@ -39,6 +39,14 @@ install reattach-to-user-namespace
 # install libtool
 # install automake
 # install z
+install jenkins
+
+# numerical computation
+install R
+install homebrew/science/octave
+install homebrew/science/maxima
+install homebrew/science/wxmaxima
+install Caskroom/cask/scilab
 
 # MacVim
 tap supermomonga/homebrew-splhack
