@@ -19,6 +19,9 @@ elseif has('mac')
   set guifont=Ricty\ Discord:h13,
              \Osaka－等幅:h14
   "set guifontwide=Ricty\ Discord\ 12
+  if has('kaoriya')
+    set imdisable
+  endif
 elseif has('xfontset')
   " UNIX (use xfontset)
   set guifontset=a14,r14,k14
