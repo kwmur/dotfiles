@@ -326,6 +326,7 @@ NeoBundle 'thinca/vim-quickrun', {
       \ }
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'tpope/vim-abolish'
+NeoBundle 'tpope/vim-surround'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'vim-scripts/Align'
 NeoBundle 'majutsushi/tagbar', {
