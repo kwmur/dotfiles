@@ -56,7 +56,7 @@ fi
 
 # rbenv
 if [ -d "${HOME}/.rbenv/bin" ]; then
-  export PATH="${HOME}/.rbenv/bin:{$PATH}"
+  export PATH="${HOME}/.rbenv/bin:${PATH}"
   eval "$(rbenv init -)"
 fi
 
@@ -91,4 +91,30 @@ case "${OSTYPE}" in
     # Finished adapting your PATH environment variable for use with MacPorts.
     ;;
 esac
+
+
+# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
+export COCOS_CONSOLE_ROOT=/usr/local/Cocos2d/cocos2d-x-3.6/tools/cocos2d-console/bin
+export PATH=$COCOS_CONSOLE_ROOT:$PATH
+
+# Add environment variable NDK_ROOT for cocos2d-x
+export NDK_ROOT=/usr/local/Android/android-ndk-r10e
+export PATH=$NDK_ROOT:$PATH
+
+# Add environment variable ANDROID_SDK_ROOT for cocos2d-x
+export ANDROID_SDK_ROOT=/usr/local/Android/android-sdk-macosx
+export PATH=$ANDROID_SDK_ROOT:$PATH
+export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
+
+# Add environment variable ANT_ROOT for cocos2d-x
+export ANT_ROOT=/usr/local/bin
+#export PATH=$ANT_ROOT:$PATH
+
+# Java SDK 1.6
+# export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/A/Commands/java_home -v "1.6"`
+# PATH=${JAVA_HOME}/bin:${PATH}
+
+# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
+export COCOS_TEMPLATES_ROOT=/usr/local/Cocos2d/cocos2d-x-3.6/templates
+export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 
