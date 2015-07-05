@@ -59,3 +59,10 @@ alias emacs-debug-init='emacs --debug-init'
 ## Git
 alias g='git'
 
+
+### Added by the Heroku Toolbelt
+if [ -d /usr/local/heroku ]
+  export PATH="/usr/local/heroku/bin:$PATH"
+fi
+
+
