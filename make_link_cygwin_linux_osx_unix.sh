@@ -7,6 +7,7 @@
 # set your dotfiles directory this
 readonly DOTFILES_DIR=$(cd $(dirname $0);pwd)
 readonly BACKUP_TIME="`date +_%Y_%m%d_%H%M%S`_PID$$"
+readonly DOTFILES_BACKUP_DIR=~/.dotfiles.backup
 
 make_link(){
   for file_name in $@
