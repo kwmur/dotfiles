@@ -61,6 +61,7 @@ alias g='git'
 
 ### Added by the Heroku Toolbelt
 if [ -d /usr/local/heroku ]
+then
   export PATH="/usr/local/heroku/bin:$PATH"
 fi
 
