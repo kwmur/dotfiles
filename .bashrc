@@ -65,4 +65,8 @@ then
   export PATH="/usr/local/heroku/bin:$PATH"
 fi
 
+if [ -z $LC_ALL ]
+then
+  export LC_ALL="ja_JP.UTF-8"
+fi
 
