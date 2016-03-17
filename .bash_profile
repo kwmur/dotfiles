@@ -60,6 +60,7 @@ if [ -d "${HOME}/.rbenv/bin" ]; then
   eval "$(rbenv init -)"
 fi
 
+# OSTYPE
 case "${OSTYPE}" in
   cygwin)
     ;;
@@ -73,28 +74,14 @@ case "${OSTYPE}" in
       export ANDROID_SDK_HOME=$ANDROID_HOME/sdk
       export PATH=$PATH:$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/platform-tools
     fi
-
-    # Ports
-    if [ -d /opt/local/bin ]; then
-      export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-
-      # PHP
-      ## pear settings
-      if [ -d /opt/local/bin/php ]; then
-        export PHP_PEAR_PHP_BIN=/opt/local/bin/php
-      fi
-      if [ -d /opt/local/lib/php/pear ]; then
-        export PHP_PEAR_INSTALL_DIR=/opt/local/lib/php/pear
-        export PATH=$PATH:$PHP_PEAR_INSTALL_DIR/bin
-      fi
-    fi
-    # Finished adapting your PATH environment variable for use with MacPorts.
     ;;
 esac
 
 
+# cocos2d-x {{{
+
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/usr/local/Cocos2d/cocos2d-x-3.6/tools/cocos2d-console/bin
+export COCOS_CONSOLE_ROOT=/Applications/Cocos/frameworks/cocos2d-x-3.9/tools/cocos2d-console/bin
 export PATH=$COCOS_CONSOLE_ROOT:$PATH
 
 # Add environment variable NDK_ROOT for cocos2d-x
@@ -107,8 +94,14 @@ export PATH=$ANDROID_SDK_ROOT:$PATH
 export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
 # Add environment variable ANT_ROOT for cocos2d-x
-export ANT_ROOT=/usr/local/bin
-#export PATH=$ANT_ROOT:$PATH
+if [ -d /Applications/Cocos/tools/ant/bin ]; then
+  export ANT_ROOT=/Applications/Cocos/tools/ant/bin
+  #export PATH=$ANT_ROOT:$PATH
+elif [ -f /usr/local/bin/ant ]; then
+  # Homebrew installed ant
+  export ANT_ROOT=/usr/local/bin
+  #export PATH=$ANT_ROOT:$PATH
+fi
 
 # Java SDK 1.6
 # export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/A/Commands/java_home -v "1.6"`
@@ -117,4 +110,6 @@ export ANT_ROOT=/usr/local/bin
 # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
 export COCOS_TEMPLATES_ROOT=/usr/local/Cocos2d/cocos2d-x-3.6/templates
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH
+
+# }}}
 
