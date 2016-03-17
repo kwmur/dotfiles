@@ -42,7 +42,7 @@ install reattach-to-user-namespace
 install jenkins
 
 # numerical computation
-install R
+install homebrew/science/R
 install homebrew/science/octave
 #install homebrew/science/maxima
 #install homebrew/science/wxmaxima
