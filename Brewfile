@@ -24,7 +24,7 @@ install ag
 install tree
 install gnuplot --pdf --qt --with-x
 install ant
-install wireshark --with-qt # usage: wireshark-qt
+# install wireshark --with-qt # usage: wireshark-qt
 # install install coreutils
 # install sl
 # install mysql
@@ -44,8 +44,8 @@ install jenkins
 # numerical computation
 install R
 install homebrew/science/octave
-install homebrew/science/maxima
-install homebrew/science/wxmaxima
+#install homebrew/science/maxima
+#install homebrew/science/wxmaxima
 install Caskroom/cask/scilab
 
 # MacVim
@@ -66,15 +66,15 @@ cask install firefox
 cask install google-chrome
 cask install virtualbox
 cask install vagrant
-cask install wireshark
-cask install sourcetree
-cask install kobito
+# cask install wireshark
+# cask install sourcetree
+# cask install kobito
 
 # cask install unity3d
-cask install xamarin-studio
-cask install mono-mdk
+#cask install xamarin-studio
+#cask install mono-mdk
 
-cask install phpstorm
+# cask install phpstorm
 cask install mysqlworkbench
 cask install sequel-pro
 
