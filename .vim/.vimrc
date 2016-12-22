@@ -47,7 +47,7 @@ set swapfile
 " setting editor action {{{
 
 " use clipboard
-set clipboard+=autoselect
+set clipboard+=unnamed,autoselect
 
 set wrap
 
