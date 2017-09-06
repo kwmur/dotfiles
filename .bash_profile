@@ -67,49 +67,6 @@ case "${OSTYPE}" in
   darwin*)
     export LSCOLORS=gxfxcxdxbxegedabagacad
     export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[36m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\n\$ '
-
-    # Android SDK
-    if [ -d /usr/local/Android/adt-bundle-mac-x86_64 ]; then
-      export ANDROID_HOME=/usr/local/Android/adt-bundle-mac-x86_64
-      export ANDROID_SDK_HOME=$ANDROID_HOME/sdk
-      export PATH=$PATH:$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/platform-tools
-    fi
     ;;
 esac
-
-
-# cocos2d-x {{{
-
-# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Applications/Cocos/frameworks/cocos2d-x-3.9/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
-
-# Add environment variable NDK_ROOT for cocos2d-x
-export NDK_ROOT=/usr/local/Android/android-ndk-r10e
-export PATH=$NDK_ROOT:$PATH
-
-# Add environment variable ANDROID_SDK_ROOT for cocos2d-x
-export ANDROID_SDK_ROOT=/usr/local/Android/android-sdk-macosx
-export PATH=$ANDROID_SDK_ROOT:$PATH
-export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
-
-# Add environment variable ANT_ROOT for cocos2d-x
-if [ -d /Applications/Cocos/tools/ant/bin ]; then
-  export ANT_ROOT=/Applications/Cocos/tools/ant/bin
-  #export PATH=$ANT_ROOT:$PATH
-elif [ -f /usr/local/bin/ant ]; then
-  # Homebrew installed ant
-  export ANT_ROOT=/usr/local/bin
-  #export PATH=$ANT_ROOT:$PATH
-fi
-
-# Java SDK 1.6
-# export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/A/Commands/java_home -v "1.6"`
-# PATH=${JAVA_HOME}/bin:${PATH}
-
-# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT=/usr/local/Cocos2d/cocos2d-x-3.6/templates
-export PATH=$COCOS_TEMPLATES_ROOT:$PATH
-
-# }}}
 
