@@ -72,11 +72,24 @@ backup_and_copy .vimrc .gvimrc .gitconfig
 # common link
 make_link .bash_profile .bashrc .ccl-init.lisp .clisprc.lisp .ghci .gemrc .tigrc
 
-# TODO: use case expression
 uname -a | grep -i cygwin > /dev/null
 if [ $? -eq 0 ]; then
   # Cygwin
   make_link .bashrc.cygwin
+  # .vim .emacs.d
+  if [ ! -e ~/.vim -a ! -e ~/.emacs.d ]; then
+    # OS
+    case `uname` in
+      CYGWIN_NT-5.1) # Windows XP ?
+        echo "winXP"
+        #./make_link_win_xp.bat # TODO: test
+        ;;
+      CYGWIN_NT-10.0) # Windows 10
+        echo "win10"
+        #./make_link_win_7.bat # TODO: test
+        ;;
+    esac
+  fi
 else
   # Unix, Linux, Mac OS X
   make_link .emacs.d .vim
