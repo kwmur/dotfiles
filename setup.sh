@@ -9,6 +9,7 @@ git clone https://github.com/kwmur/dotfiles.git
 
 case "${OSTYPE}" in
   cygwin)
+    sh ~/projects/dotfiles/make_link_cygwin_linux_mac_unix.sh
     ;;
   darwin*)
     sh ~/projects/dotfiles/make_link_cygwin_linux_mac_unix.sh
