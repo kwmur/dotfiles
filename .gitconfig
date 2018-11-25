@@ -11,4 +11,5 @@
 	c = checkout
 	cb = checkout -b
 	p = pull
-
+[core]
+	excludesfile = ~/projects/gitignore/Global/Vim.gitignore
