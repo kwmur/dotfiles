@@ -8,7 +8,7 @@
 readonly DOTFILES_DIR=$(cd $(dirname $0);pwd)
 readonly BACKUP_TIME_PID="`date +_%Y_%m%d_%H%M%S`_PID$$"
 readonly DOTFILES_BACKUP_DIR=~/.dotfiles.backup
-readonly DOTFILES_BACKUP_TIME_DIR="$DOTFILES_BACKUP_DIR/date_$BACKUP_TIME_PID"
+readonly DOTFILES_BACKUP_TIME_DIR="$DOTFILES_BACKUP_DIR/date$BACKUP_TIME_PID"
 
 mv_to_backup_dir(){
   if [ ! -d "$DOTFILES_BACKUP_DIR" ]; then
