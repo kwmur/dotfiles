@@ -8,7 +8,7 @@ if [ ! -d ~/projects ]; then
 fi
 
 # dotfiles
-if [ -e "$DOTFILES_INSTALL_DIR" ]; then
+if [ -d "$DOTFILES_INSTALL_DIR" ]; then
   echo "\"$DOTFILES_INSTALL_DIR\" already exists!"
 else
   git clone https://github.com/kwmur/dotfiles.git "$DOTFILES_INSTALL_DIR"
