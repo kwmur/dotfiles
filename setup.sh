@@ -1,11 +1,18 @@
 #!/bin/bash
 
+readonly DOTFILES_INSTALL_DIR=~/projects/dotfiles
+
 # projects
-mkdir ~/projects
-cd ~/projects
+if [ ! -d ~/projects ]; then
+  mkdir ~/projects
+fi
 
 # dotfiles
-git clone https://github.com/kwmur/dotfiles.git
+if [ -e "$DOTFILES_INSTALL_DIR" ]; then
+  echo "\"$DOTFILES_INSTALL_DIR\" already exists!"
+else
+  git clone https://github.com/kwmur/dotfiles.git "$DOTFILES_INSTALL_DIR"
+fi
 
 case "${OSTYPE}" in
   cygwin)
@@ -21,6 +28,7 @@ case "${OSTYPE}" in
     ;;
 esac
 
-# neobundle
-curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+# dein.vim
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein.vim.installer.sh
+sh ./dein.vim.installer.sh ~/.cache/dein
 
