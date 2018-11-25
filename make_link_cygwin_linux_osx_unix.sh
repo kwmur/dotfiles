@@ -6,8 +6,31 @@
 
 # set your dotfiles directory this
 readonly DOTFILES_DIR=$(cd $(dirname $0);pwd)
-readonly BACKUP_TIME="`date +_%Y_%m%d_%H%M%S`_PID$$"
+readonly BACKUP_TIME_PID="`date +_%Y_%m%d_%H%M%S`_PID$$"
 readonly DOTFILES_BACKUP_DIR=~/.dotfiles.backup
+readonly DOTFILES_BACKUP_TIME_DIR="$DOTFILES_BACKUP_DIR/date_$BACKUP_TIME_PID"
+
+mv_to_backup_dir(){
+  if [ ! -d "$DOTFILES_BACKUP_DIR" ]; then
+    echo "==> mkdir $DOTFILES_BACKUP_DIR"
+    mkdir "$DOTFILES_BACKUP_DIR"
+  fi
+
+  if [ ! -d "$DOTFILES_BACKUP_TIME_DIR" ]; then
+    echo "==> mkdir $DOTFILES_BACKUP_TIME_DIR"
+    mkdir "$DOTFILES_BACKUP_TIME_DIR"
+  fi
+
+  for file_name in $@
+  do
+    if [ -e ~/$file_name ]; then
+      echo "==> mv ~/$file_name $DOTFILES_BACKUP_TIME_DIR/."
+      mv ~/$file_name "$DOTFILES_BACKUP_TIME_DIR/."
+    else
+      echo "==> WARNNING: ~/$file_name is missing."
+    fi
+  done
+}
 
 make_link(){
   for file_name in $@
@@ -17,8 +40,8 @@ make_link(){
       continue
     fi
     if [ -e ~/$file_name ]; then
-      echo "==> mv ~/$file_name ~/$file_name$BACKUP_TIME"
-      mv ~/$file_name ~/$file_name$BACKUP_TIME
+      echo "==> mv_to_backup_dir ~/$file_name "
+      mv_to_backup_dir $file_name
     fi
     # make symbolic link
     echo "==> ln -s $DOTFILES_DIR/$file_name ~/"
@@ -35,8 +58,8 @@ backup_and_copy(){
   for file_name in $@
   do
     if [ -e ~/$file_name ]; then
-      echo "==> mv ~/$file_name ~/$file_name$BACKUP_TIME"
-      mv ~/$file_name ~/$file_name$BACKUP_TIME
+      echo "==> mv_to_backup_dir ~/$file_name"
+      mv_to_backup_dir $file_name
     fi
     echo "==> cp $DOTFILES_DIR/$file_name ~/"
     cp $DOTFILES_DIR/$file_name ~/
