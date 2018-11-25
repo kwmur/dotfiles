@@ -45,7 +45,7 @@ make_link(){
     fi
     # make symbolic link
     echo "==> ln -s $DOTFILES_DIR/$file_name ~/"
-    ln -s $DOTFILES_DIR/$file_name ~/
+    ln -s "$DOTFILES_DIR/$file_name" ~/
     if [ $? -eq 0 ]; then
       echo "  => OK."
     else
@@ -62,7 +62,7 @@ backup_and_copy(){
       mv_to_backup_dir $file_name
     fi
     echo "==> cp $DOTFILES_DIR/$file_name ~/"
-    cp $DOTFILES_DIR/$file_name ~/
+    cp "$DOTFILES_DIR/$file_name" ~/
   done
 }
 
