@@ -4,7 +4,8 @@ scriptencoding utf-8
 " font settings {{{
 if has('win32')
   " Windows
-  set guifont=Ricty\ Discord:h12,
+  set guifont=Ricty\ Diminished\ Discord:h12,
+             \Ricty\ Diminished:h12,
              \MigMix_1M:h9:cDEFAULT,
              \MigMix_2M:h9:cDEFAULT,
              \MS_Gothic:h10:cSHIFTJIS,
