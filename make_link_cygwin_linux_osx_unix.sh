@@ -66,10 +66,8 @@ backup_and_copy(){
   done
 }
 
-# local .vimrc .gvimrc
+# local dot files
 backup_and_copy .vimrc .gvimrc .gitconfig
-
-# common link
 
 # TODO: $OSTYPE is better ?
 uname -a | grep -i cygwin > /dev/null # Cygwin?
@@ -78,18 +76,22 @@ if [ $? -eq 0 ]; then
     CYGWIN_NT-5.1) # Windows XP ?
       echo "winXP"
       if [ ! -e ~/.vim -a ! -e ~/.emacs.d ]; then
+        make_link .bash_profile .bashrc .ccl-init.lisp .clisprc.lisp .ghci .gemrc .tigrc
         #./make_link_win_xp.bat # TODO: test
+        echo "Please run a batch file make_link_win_xp.bat from the Command Prompt. (need admin?)"
       fi
       ;;
     CYGWIN_NT-10.0) # Windows 10
       echo "win10"
-      #./make_link_win_7-10.bat # TODO: test
+      echo "Please run a batch file make_link_win_7-10.bat from the Command Prompt as an administrator."
+
+      # No log
+      #powershell start-process make_link_win_7-10.bat -verb runas
       ;;
   esac
 else
   # Unix, Linux, Mac OS X
-  make_link .bash_profile .bashrc .ccl-init.lisp .clisprc.lisp .ghci .gemrc .tigrc
-  make_link .emacs.d .vim
+  make_link .emacs.d .vim .bash_profile .bashrc .ccl-init.lisp .clisprc.lisp .ghci .gemrc .tigrc
 
   # Ubuntu
   uname -a | grep -i ubuntu > /dev/null
