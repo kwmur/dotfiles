@@ -75,6 +75,6 @@ endif
 " }}}
 
 " {{{
-set transparency=20
+set transparency=200
 " }}}
 
