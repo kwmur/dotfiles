@@ -76,7 +76,7 @@ if [ $? -eq 0 ]; then
     CYGWIN_NT-5.1) # Windows XP ?
       echo "winXP"
       if [ ! -e ~/.vim -a ! -e ~/.emacs.d ]; then
-        make_link .bash_profile .bashrc .ccl-init.lisp .clisprc.lisp .ghci .gemrc .tigrc
+        # make_link .bash_profile .bashrc .ccl-init.lisp .clisprc.lisp .ghci .gemrc .tigrc # TODO: hard link in .bat
         #./make_link_win_xp.bat # TODO: test
         echo "Please run a batch file make_link_win_xp.bat from the Command Prompt. (need admin?)"
       fi
