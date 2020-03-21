@@ -1,0 +1,22 @@
+#NeoBundleLazy 'vim-jp/cpp-vim', {
+#      \ 'autoload' : {'filetypes' : 'cpp'}
+#      \ }
+#NeoBundleLazy 'osyo-manga/unite-boost-online-doc', {
+#      \ 'depends' : [
+#      \      'Shougo/unite.vim',
+#      \      'tyru/open-browser.vim',
+#      \      'mattn/webapi-vim',
+#      \   ],
+#      \ 'autoload' : {'filetypes' : 'cpp'}
+#      \ }
+#"NeoBundleLazy 'osyo-manga/vim-marching', {
+#"      \ 'depends' : ['Shougo/vimproc.vim', 'osyo-manga/vim-reunions'],
+#"      \ 'autoload' : {'filetypes' : ['c', 'cpp']}
+#"      \ }
+#NeoBundleLazy 'osyo-manga/vim-stargate', {
+#      \ 'autoload' : {'filetypes' : 'cpp'}
+#      \ }
+#NeoBundleLazy 'kana/vim-altr'
+#"NeoBundleLazy 'rhysd/vim-clang-format', {
+#"      \ 'autoload' : {'filetypes' : ['c', 'cpp', 'objc']}
+#"      \ }
