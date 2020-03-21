@@ -637,9 +637,6 @@ set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
 
-  " Let dein manage dein
-  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-
   " Add or remove your plugins here like this:
   "call dein#add('Shougo/neosnippet.vim')
   "call dein#add('Shougo/neosnippet-snippets')
