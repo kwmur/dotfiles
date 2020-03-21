@@ -638,7 +638,6 @@ if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
 
   " Let dein manage dein
-  " Required:
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
@@ -649,6 +648,14 @@ if dein#load_state('~/.cache/dein')
   "  call dein#add('roxma/nvim-yarp')
   "  call dein#add('roxma/vim-hug-neovim-rpc')
   "endif
+
+  " toml path
+  let s:toml_dir  = expand('~/.vim/rc')
+  let s:toml      = s:toml_dir . '/dein.toml'
+  let s:lazy_toml = s:toml_dir . '/dein_lazy.toml'
+  " cache toml
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
   call dein#end()
   call dein#save_state()
