@@ -74,6 +74,8 @@ set foldmethod=marker
 
 set sessionoptions+=unix,slash
 
+set belloff=all
+
 " }}}
 
 " search settings {{{
